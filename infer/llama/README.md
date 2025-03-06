@@ -2,68 +2,24 @@
 
 This is a demo that will show the exact same code (`llama_infer.py`) running either locally (if run with a PyTorch venv) or in the cloud (if run with a MyTorch venv).
 
-##Prerequiste setup
-You need to have two environmental variables set up in your shell for things to run:
+## Prerequistes
+You need to have the "HUGGING_FACE_TOKEN" environment variable set up in your shell for things to run.  You can get the required token by setting up an account on HuggingFace 
+if you don't already have one.
 
-`HUGGING_FACE_TOKEN`
+## Create a Python env
 
-and
+MyTorch requires Python 3.10 or greater.  MyTorch replaces PyTorch and other Machine Learning libraries so it is important that you start with a clean enviroment. The easiest way to do that is with Python's virtualenv as shown here:
 
-`MYTORCH_SERVER_IP`
+`python3 -m venv ~/venv_mytorch_server`
 
-In addition, you need the ability to run the MyTorch server on the machine with the provided IP.
+`source ~/venv_mytorch_server/bin/activate`
 
-
-## Running the MyTorch server
-Setting up the server is very straightforward:
-
-- download the repo
-- create a Python venv
-- run the server
-
-###Download the repo
-
-If you do not have an invite to be a collaborator on the myTorch repo, contact Greg
-
-`git clone git@github.com:mytorch-ai/mytorch.git`
-
-###Create a Python env
-
-NOTE: myTorch requires Python 3.10 or greater
-`cd mytorch/server`
-
-`python3 -m venv venv_mytorch_server`
-
-`source venv_mytorch_server/bin/activate`
-
-`pip install -r requirements.txt`
-
-###Run the MyTorch Server
-`cd mytorch/server`
-
-`python server.py --log debug`
+`pip install https://raw.githubusercontent.com/mytorch-ai/examples/main/mytorch-0.3.0-py3-none-any.whl`
 
 ## Running the demo
-
-To run the demo, we first run `llama_infer.py` in one virtual environment and then the other. First, let's create both virtual environments:
-
-`./env_setup.sh`
-
-This will generate a `venv_pytorch` folder, and a `venv_mytorch` folder
-
-### Run the script locally using PyTorch
-`source venv_pytorch/bin/activate`
+You are now ready to run the demo.  Simply run the program like you would any PyTorch program.
 
 `python llama_infer.py`
 
-`deactivate`
-
-### Run the script in on a remote resource using MyTorch
-`source venv_mytorch/bin/activate`
-
-`python llama_infer.py`
-
-`deactivate`
-
-###Notes:
+## Notes:
 
