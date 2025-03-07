@@ -1,7 +1,8 @@
-import torch as torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import time
 import os
+import time
+
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 import huggingface_hub
 
 # Log in to Hugging Face
@@ -9,7 +10,6 @@ hugging_face_token = os.getenv("HUGGING_FACE_TOKEN")
 huggingface_hub.login(token=hugging_face_token)
 
 model = "meta-llama/Llama-3.2-1B-Instruct"
-
 
 if torch.cuda.is_available():
     print(f"*** Using GPU: {torch.cuda.get_device_name()} ***")
@@ -63,8 +63,10 @@ outputs = model.generate(
     top_p=0.9,
     do_sample=True,
 )
+
 # Decode and print the response
 response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
 # Clean up the response by removing instruction tokens, the original prompt, and extra whitespace
 response = response.replace("[INST]", "").replace("[/INST]", "").strip()
 response = response.replace(prompt, "").strip()
