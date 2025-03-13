@@ -7,7 +7,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import huggingface_hub
 
 # Log in to Hugging Face
-hugging_face_token = os.getenv("HUGGING_FACE_TOKEN")
+hugging_face_token = os.getenv("HF_TOKEN")
+if hugging_face_token is None:
+    hugging_face_token = os.getenv("HUGGING_FACE_TOKEN")
 if hugging_face_token is not None:
     huggingface_hub.login(token=hugging_face_token)
 else:
