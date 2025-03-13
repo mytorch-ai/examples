@@ -8,8 +8,6 @@ import huggingface_hub
 
 # Log in to Hugging Face
 huggingface_token = os.getenv("HF_TOKEN")
-if huggingface_token is None:
-    huggingface_token = os.getenv("HUGGINGFACE_TOKEN")
 if huggingface_token is not None:
     huggingface_hub.login(token=huggingface_token)
 else:
@@ -18,7 +16,7 @@ else:
     if os.path.exists(hf_token_path):
         print("You are already logged into Hugging Face, which makes me happy!!!")
     else:
-        print("*** You must either set the environment variable HUGGINGFACE_TOKEN or \n"
+        print("*** You must either set the environment variable HF_TOKEN or \n"
               "*** login to hugging face using the CLI command", file=sys.stderr)
         exit(1)
 
