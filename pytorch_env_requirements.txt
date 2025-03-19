@@ -1,0 +1,9 @@
+transformers
+grpcio>=1.63.0
+grpcio-tools>=1.63.0
+numpy<2
+torch
+torchvision
+accelerate
+bitsandbytes
+
