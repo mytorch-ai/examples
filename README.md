@@ -30,7 +30,7 @@ rm -rf venv_mytorch
 python -m venv venv_mytorch
 source venv_mytorch/bin/activate
 pip install --upgrade pip
-pip install mytorch-0.3.0-py3-none-any.whl
+pip install --upgrade mytorch-ai
 deactivate
 ```
 
@@ -41,7 +41,7 @@ Remove-Item -Recurse -Force venv_mytorch
 python -m venv venv_mytorch
 .\venv_mytorch\Scripts\Activate.ps1
 pip install --upgrade pip
-pip install mytorch-0.3.0-py3-none-any.whl
+pip install --upgrade mytorch-ai
 deactivate
 ```
 
