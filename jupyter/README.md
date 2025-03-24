@@ -14,8 +14,7 @@ Setup Instructions:
    - pip install --upgrade pip
    - pip install --upgrade mytorch-ai
    - pip install jupyterlab ipykernel jupyter
-4) Register the Virtual Environment as a Jupyter Kernel
-   This makes your new environment available as a kernel named “mytorch (venv)” in Jupyter:
+4) Register the Virtual Environment as a Jupyter Kernel. This makes your new environment available as a kernel named “mytorch (venv)” in Jupyter:
    - python -m ipykernel install --user --name mytorch_env --display-name "mytorch (venv)"
 5) Launch Jupyter Notebook
    - jupyter notebook
