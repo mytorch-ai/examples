@@ -22,6 +22,7 @@ To use MyTorch, you will need to do the following:
 > **Note:** We recommend running the following commands in this (`./examples`) directory
 
 ## Step 2: Installation
+IMPORTANT: MyTorch replaces functions from libraries like PyTorch and Transformers with its own cloud-based implementations. For it to work properly, these libraries **must not** be pre-installed. If you’ve already installed them, create a fresh environment and install MyTorch **before** anything else. We recommend using `virtualenv` or `conda` to ensure a clean setup, even if you're unsure whether conflicts exist.
 
 ### Setting up MyTorch on Linux/MacOS
 
