@@ -18,10 +18,10 @@ Contact [MyTorch.net support](https://mytorch.net/support) if you are having iss
 
 Make sure you set up your environment correctly:
 
-> python3 -m venv ~/venv_mytorch
-> source ~/venv_mytorch/bin/activate
-> pip install --upgrade pip
-> pip install --upgrade mytorch-ai
+> python3 -m venv ~/venv_mytorch  
+> source ~/venv_mytorch/bin/activate  
+> pip install --upgrade pip  
+> pip install --upgrade mytorch-ai  
 
 That's how easy it is to use MyTorch.
 
@@ -29,7 +29,7 @@ See below for more details.
 Consider cloning the github examples repository:
 git clone https://github.com/mytorch-ai/examples.git
 
-Also refer to: ./examples/infer/llama/llama_infer.py
+Also refer to: ./examples/infer/llama/llama_infer.py  
 And ./examples/jupyter/water_leak_detection.ipynb
 
 To run the test in `./infer/llama3/infer_llama.py` you will need to follow the procedure described in the [HuggingFace.md](HuggingFace.md) to request and receive a Hugging Face token to access the model weights.
