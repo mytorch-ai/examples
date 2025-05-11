@@ -1,28 +1,46 @@
-# MyTorch Preview Setup Guide
+Welcome to MyTorch!
 
-Thank you for registering for our MyTorch preview!
-
-You should have received an access token in the email you provided at registration.
-If you did not receive such a message, check your spam folder.
-Contact [MyTorch.net support](https://mytorch.net/support) if you are having issues getting a mytorch token.
+MyTorch provides all the features of PyTorch.
+The code in these examples is identical to PyTorch.
+MyTorch offers transparent access to cloud GPUs with zero code changes.
+Simply pip install mytorch-ai instead of torch.
 
 ## Step 1: Setting Up
 
-To use MyTorch, you will need to do the following:
+But first, one more step: register with MyTorch.net and get an access token.
+Put that token into a file named ~/.mytorch (in your home directory).
 
-1. Create a file named `~/.mytorch` in your home directory and add the line:
-   ```
-   token=yourmytorchtokenfromyouremail
-   ```
-   to that file. Modify the line above with your actual token, don't cut and paste.
+> echo "token=xxx" > ~/.mytorch
 
-2. To run the test in `./infer/llama3/infer_llama.py` you will need to follow the procedure described in the [HuggingFace.md](HuggingFace.md) 
-   to request and receive a Hugging Face token to access the model weights.
+You should have received an access token in the email you provided at registration.
+If you did not receive such a message, check your spam folder.
+Contact [MyTorch.net support](https://mytorch.net/support) if you are having issues getting an access token.
 
-> **Note:** We recommend running the following commands in this (`./examples`) directory
+Make sure you set up your environment correctly:
+
+> python3 -m venv ~/venv_mytorch
+> source ~/venv_mytorch/bin/activate
+> pip install --upgrade pip
+> pip install --upgrade mytorch-ai
+
+That's how easy it is to use MyTorch.
+
+See below for more details.
+Consider cloning the github examples repository:
+git clone https://github.com/mytorch-ai/examples.git
+
+Also refer to: ./examples/infer/llama/llama_infer.py
+And ./examples/jupyter/water_leak_detection.ipynb
+
+To run the test in `./infer/llama3/infer_llama.py` you will need to follow the procedure described in the [HuggingFace.md](HuggingFace.md) to request and receive a Hugging Face token to access the model weights.
+
+Not all examples require a HuggingFace token.
+The water_leak_detection example creates and trains a model from scratch.
 
 ## Step 2: Installation
-**IMPORTANT:** MyTorch replaces functions from libraries like PyTorch and Transformers with its own cloud-based implementations. For it to work properly, these libraries **must not** be pre-installed. If you’ve already installed them, create a fresh environment and install MyTorch **before** anything else. We recommend using `virtualenv` or `conda` to ensure a clean setup, even if you're unsure whether conflicts exist.
+**IMPORTANT:** MyTorch replaces functions from libraries like PyTorch and Transformers with its own cloud-based implementations. For it to work properly, these libraries (torch etc) **must not** be pre-installed. If you’ve already installed them, create a fresh environment and install MyTorch **before** anything else. We recommend using `virtualenv` or `conda` to ensure a clean setup, even if you're unsure whether conflicts exist. 
+
+> **Note:** We recommend running the following commands in this (`./examples`) directory
 
 ### Setting up MyTorch on Linux/MacOS
 
@@ -75,7 +93,8 @@ deactivate
 Now you are ready to run examples...
 
 1. Activate your venv environment of choice from Section 2.
-2. Navigate to the example directory:
+2. Navigate to the example directory.
+
 
 ### Example 1: LLAMA-3.2-3B Inference
 
